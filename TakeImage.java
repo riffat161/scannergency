@@ -25,15 +25,22 @@ public class TakeImage extends AppCompatActivity {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent,0);
 
+        //try
+
+        //open_text_editor();
 
             }
         });
         }
 
+    public void open_text_editor(){
+        Intent intent = new Intent(this, text_editor.class);
+        startActivity(intent);
+    }
         @Override
     protected  void  onActivityResult (int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(bitmap);
-        }
+    }
 }
